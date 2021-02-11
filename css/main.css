@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: #000;
+  font-size: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.2rem;
+  color: #fff;
+}
+
+body {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 200vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+main {
+  width: 100%;
+}
+
+header {
+  height: 60px;
+  background: #333;
+  display: flex;
+  justify-content: flex-start;
+}
+
+main {
+  flex-grow: 1;
+  background: papayawhip;
+  color: #000;
+}
+
+h1 {
+  font-size: 0.75rem;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.mobile-break {
+  display: block;
+}
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  padding: 1em;
+  font-weight: bolder;
+  flex-grow: 1;
+  justify-content: flex-start;
+}
+
+.nav {
+  padding-top: 40px;
+}
+
+.hamburger {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 0;
+  left: calc(100% - 60px);
+  color: #fff;
+}
+
+.menu {
+  visibility: hidden;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: bottom;
+  z-index: auto;
+}
+
+.hamburger:focus + .menu,
+.menu:hover {
+  visibility: visible;
+  background-color: #fff;
+}
+
+.menuItem {
+  width: 100px;
+  padding: 0.5em 1em;
+  outline: none;
+  position: relative;
+  background-color: #333;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.subMenu {
+  width: 120px;
+  visibility: hidden;
+  list-style-type: none;
+  position: absolute;
+  top: 80%;
+  left: -80%;
+  background-color: #333;
+  color: #fff;
+  box-shadow: 2px 2px 2px #000;
+  z-index: 1;
+}
+
+.subLevel {
+  top: 55%;
+  z-index: 1;
+}
+
+.subItem {
+  width: 100%;
+  min-width: 100px;
+  padding: 1em 1.5em;
+  background-color: #333;
+  outline: none;
+  position: relative;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.hamburger:hover,
+.hamburger:focus,
+.menuItem:hover,
+.menuItem:focus,
+.subItem:hover,
+.subItem:focus,
+.subItem:focus-within {
+  background-color: #fff;
+  color: #000;
+}
+
+.subItem:hover > a,
+.subItem:focus > a,
+a:focus {
+  color: #000;
+  font-size: 120%;
+}
+
+.menuItem:hover > .subMenu,
+.menuItem:focus > .subMenu,
+.menuItem:focus-within > .subMenu,
+.subItem:hover > .subMenu,
+.subItem:focus > .subMenu,
+.subItem:focus-within > .subMenu {
+  visibility: visible;
+}
+
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 1rem;
+  }
+  .nav {
+    padding-top: 0;
+    flex-grow: 1;
+  }
+  .title {
+    flex-grow: 0;
+  }
+  .mobile-break {
+    display: none;
+  }
+  .hamburger {
+    display: none;
+  }
+  .menu {
+    visibility: visible;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  .menu:hover,
+  .menu:focus {
+    background-color: #333;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  top: -999px;
+  left: 0;
+  background: #fff;
+  padding: 0.5rem;
+  z-index: 1;
+  color: #000;
+}
+
+.skip-link:focus,
+.skip-link:active {
+  top: auto;
+  left: auto;
+}
