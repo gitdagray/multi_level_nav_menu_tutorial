@@ -104,7 +104,7 @@ a {
 }
 
 .subMenu {
-  width: 120px;
+  min-width: 120px;
   visibility: hidden;
   list-style-type: none;
   position: absolute;
@@ -146,7 +146,9 @@ a {
 .subItem:focus > a,
 a:focus {
   color: #000;
-  font-size: 120%;
+  /* font-size: 120%; */
+  /* Try this transform instead (thanks Ahmad!) */
+  transform: scale(1.2);
 }
 
 .menuItem:hover > .subMenu,
